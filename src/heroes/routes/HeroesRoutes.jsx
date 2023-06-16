@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { NavBar } from "../../ui";
 import { DcPage, HeroPage, MarvelPage, SearchPage } from "../pages";
 

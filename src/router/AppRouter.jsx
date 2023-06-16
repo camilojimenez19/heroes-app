@@ -11,10 +11,13 @@ const AppRouter = () => {
     <>
       <Routes>
         <Route
-          path="/login"
+          path="login/*"
           element={
             <PublicRoutes>
-              <LoginPage />
+              {/* <LoginPage /> */}
+              <Routes>
+                <Route path="/*" element={<LoginPage />} />
+              </Routes>
             </PublicRoutes>
           }
         />

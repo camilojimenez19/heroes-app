@@ -2,14 +2,19 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
-const LoginPage = () => {
+export const LoginPage = () => {
 
   const { login } = useContext(AuthContext)
   const navigate = useNavigate();
 
   const onLogin = () => {
+    
+    const lastPath = localStorage.getItem('lastPath') || '/'
     login('Camilo Jimenez')
-    navigate("/", { replace: true })
+
+    navigate(lastPath, {
+      replace: true
+    })
   };
   
   return (
@@ -24,4 +29,3 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
