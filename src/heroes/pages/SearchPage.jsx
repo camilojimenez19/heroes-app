@@ -23,7 +23,7 @@ const SearchPage = () => {
       <div className="alert alert-primary">Search a hero</div>
     ) : (
       !heroes.length && (
-        <div className="alert alert-danger">
+        <div aria-label="alert-danger" className="alert alert-danger">
           {" "}
           No hero with <b>{q}</b>
         </div>
@@ -45,7 +45,7 @@ const SearchPage = () => {
           <h4>Searching</h4>
           <hr />
 
-          <form onSubmit={onSearchSubmit}>
+          <form data-testid="form-search" onSubmit={onSearchSubmit}>
             <input
               type="text"
               name="searchText"
@@ -54,6 +54,7 @@ const SearchPage = () => {
               autoComplete="off"
               value={searchText}
               onChange={onInputChange}
+              aria-label="input-search"
             />
             <button className="btn btn-outline-primary mt-1">Search</button>
           </form>
